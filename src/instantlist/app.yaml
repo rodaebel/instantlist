@@ -1,0 +1,34 @@
+application: instantlist
+version: 1
+runtime: python
+api_version: 1
+
+builtins:
+
+- datastore_admin: on
+
+handlers:
+
+- url: /js/(.*\.(js))
+  static_files: js/\1
+  upload: js/(.*\.(js))
+  expiration: 5h
+
+- url: /css
+  static_dir: css
+
+- url: /images/(.*\.(gif|jpg|png))
+  static_files: images/\1
+  upload: images/(.*\.(gif|jpg|png))
+  expiration: 5h
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /gaesynkit/.*
+  script: gaesynkit/handlers.py
+  login: required
+
+- url: /
+  script: app.py

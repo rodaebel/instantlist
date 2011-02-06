@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=460" />
+    <title>Instant List</title>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="gaesynkit/gaesynkit.js"></script>
+    <script type="text/javascript" src="/js/instantlist.js"></script>
+    <script type="text/javascript">
+      var user = "{{ user }}";
+    </script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <h1>Instant List</h1>
+    <div>
+      {{ login_or_logout }}&nbsp;|
+      <a id="sync" href="javascript:null;">Synchronize</a>
+    </div>
+    <div class="list">
+      <ol id="list">
+        <li>Login</li>
+        <li>Edit your Instant List</li>
+        <li>Synchronize it</li>
+      </ol>
+      <input id="addnew" type="text" />
+    </div>
+    <div class="footer">
+      Copyright &copy; 2011 by Tobias Rodäbel
+      | Powered by <a href="http://gaesynkit.googlecode.com">gaesynkit</a>
+    </div>
+  </body>
+</html>

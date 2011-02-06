@@ -1,0 +1,92 @@
+body {
+  background-image: url(/images/background.png);
+  background-repeat: repeat;
+  font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
+  margin: 0px;
+  padding: 0px 20px 0px 20px;
+}
+
+a {
+  border: none;
+  color: #009;
+  text-decoration: none;
+}
+
+a:hover {
+  border: none;
+  color: #009;
+  text-decoration: none;
+}
+
+a:visited {
+  border: none;
+  color: #009;
+  text-decoration: none;
+}
+
+h1 {
+  background-color: white;
+  border: 1px solid white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  color: #666;
+  font-weight: normal;
+  font-style: italic;
+  margin: 0 0 20px 0;
+  padding: 20px;
+  width: 155px;
+}
+
+.list {
+  background-color: white;
+  border: 10px solid white;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  color: #666;
+  font-size: 1.3em;
+  font-style: italic;
+  margin: 20px 0 0 0;
+  width: 400px;
+}
+
+ol {
+  border-bottom: 1px solid #e4e4e4;
+  margin-top: 8px;
+  padding-bottom: 10px;
+}
+
+li {
+  padding: 5px;
+}
+
+img.delete {
+  border: none;
+  margin-left: 20px;
+  height: 10px;
+  width: 10px;
+}
+
+input#addnew {
+  background-color: white;
+  border: none;
+  -webkit-appearance: none;
+  color: #666;
+  font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
+  font-size: 1.0em;
+  margin: 0 0 15px 12px;
+  outline: none;
+  position: relative;
+  width: 350px;
+}
+
+.footer {
+  color: #666;
+  font-size: .8em;
+  margin-top: 20px;
+  width: 400px;
+}
