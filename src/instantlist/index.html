@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=460" />
+    <meta name="viewport" content="width=800" />
     <title>Instant List</title>
     {% if user %}
       <script type="text/javascript" src="gaesynkit/gaesynkit.js"></script>
@@ -15,22 +15,24 @@
     <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all" />
   </head>
   <body>
-    <h1>Instant List</h1>
-    <div class="links">
-      {{ login_or_logout }}&nbsp;|
-      <a id="sync" href="javascript:null;">Synchronize</a>
-    </div>
-    <div class="list">
-      <ol id="list">
-        <li>Login</li>
-        <li>Edit your Instant List</li>
-        <li>Synchronize it</li>
-      </ol>
-      <input id="addnew" type="text" />
-    </div>
-    <div class="footer">
-      &copy; 2011 by Tobias Rodäbel
-      | Powered by <a href="http://gaesynkit.googlecode.com">gaesynkit</a>
+    <div id="body">
+      <h1>Instant List</h1>
+      <div class="links">
+        {{ login_or_logout }}&nbsp;|
+        <a id="sync" href="javascript:null;">Synchronize</a>
+      </div>
+      <div class="list">
+        <ol id="list">
+          <li>Login</li>
+          <li>Edit your Instant List</li>
+          <li>Synchronize it</li>
+        </ol>
+        <input id="addnew" type="text" />
+      </div>
+      <div class="footer">
+        &copy; 2011 by Tobias Rodäbel
+        | Powered by <a href="http://gaesynkit.googlecode.com">gaesynkit</a>
+      </div>
     </div>
   </body>
 </html>

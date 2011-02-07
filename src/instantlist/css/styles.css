@@ -2,8 +2,14 @@ body {
   background-image: url(/images/background.png);
   background-repeat: repeat;
   font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
-  margin: 0px;
-  padding: 0px 20px 0px 20px;
+  font-size: 150%;
+  margin: 0;
+  padding: 0 1em 0 1em;
+}
+
+div#body {
+  margin: 0 auto 0 auto;
+  width: 31em;
 }
 
 a {
@@ -26,47 +32,48 @@ a:visited {
 h1 {
   background-color: white;
   border: 1px solid white;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  -moz-border-radius-bottomright: 20px;
-  -moz-border-radius-bottomleft: 20px;
-  -webkit-border-bottom-right-radius: 20px;
-  -webkit-border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+  -moz-border-radius-bottomleft: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
   color: #666;
   font-weight: normal;
   font-style: italic;
-  margin: 0 0 20px 0;
-  padding: 20px;
+  margin: 0 0 0.5em 0;
+  padding: 0.5em;
   text-align: center;
-  width: 170px;
+  width: 6em;
 }
 
 .links {
+  font-size: 1em;
   text-align: center;
-  width: 210px;
+  width: 14em;
 }
 
 .list {
   background-color: white;
-  border: 10px solid white;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
+  border: 0.5em solid white;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
   color: #666;
   font-style: italic;
-  margin: 20px 0 0 0;
-  width: 400px;
+  margin: 1em 0 0 0;
+  width: 30em;
 }
 
 ol {
   border-bottom: 1px solid #e4e4e4;
   font-size: 1.3em;
-  margin-top: 8px;
+  margin: 1em;
   padding-bottom: 10px;
 }
 
 li {
-  padding: 5px;
+  padding: 0.3em;
 }
 
 img.delete {
@@ -83,16 +90,16 @@ input#addnew {
   color: #666;
   font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
   font-size: 1.3em;
-  margin: 0 0 15px 12px;
+  margin: 0 0 1em 1em;
   outline: none;
   position: relative;
-  width: 350px;
+  width: 20em;
 }
 
 .footer {
   color: #666;
   font-size: .7em;
-  margin-top: 20px;
+  margin-top: 0.5em;
   text-align: center;
-  width: 415px;
+  width: 44em;
 }
