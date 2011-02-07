@@ -31,21 +31,23 @@ function removeItem(key, index) {
 
   entity = storage.get(key);
 
-  $("#"+index).fadeOut();
+  $("#"+index).fadeOut(500, function() {
 
-  items = (entity.items) ? entity.items : [];
+    items = (entity.items) ? entity.items : [];
 
-  for (var i in items)
-    if (i != index) new_items.push(items[i]);
+    for (var i in items)
+      if (i != index) new_items.push(items[i]);
 
-  if (new_items.length == 0)
-    entity.update({"items": 0});
-  else
-    entity.update({"items": new_items});
+    if (new_items.length == 0)
+      entity.update({"items": 0});
+    else
+      entity.update({"items": new_items});
 
-  key = storage.put(entity);
+    key = storage.put(entity);
 
-  updateList(entity);
+    updateList(entity);
+  });
+
 }
 
 

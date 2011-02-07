@@ -23,11 +23,6 @@ a:visited {
   text-decoration: none;
 }
 
-a.disabled {
-  color: #666;
-  cursor: default;
-}
-
 h1 {
   background-color: white;
   border: 1px solid white;
@@ -47,7 +42,8 @@ h1 {
 }
 
 .links {
-  margin-left: 30px;
+  text-align: center;
+  width: 210px;
 }
 
 .list {
