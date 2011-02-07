@@ -1,25 +1,27 @@
 // The storage
 var storage;
 
-// Draw updates list
-function updateList(key) {
+// Draw updated list
+function updateList(entity) {
 
-  var entity;
   var list = $("#list");
   var itemsHTML = "";
-
-  entity = storage.get(key);
 
   items = (entity.items) ? entity.items : [];
 
   for (i in items)
-    itemsHTML += "<li id=\""+i+"\">"+items[i]+"<a href=\"javascript:removeItem('"+key.value()+"',"+i+");\"><img class=\"delete\" src=\"/images/delete.gif\" alt=\"Delete\"></a></li>";
+    itemsHTML += "<li id=\"" + i + "\">" + items[i]
+               + "<a href=\"javascript:removeItem('"
+               + entity.key().value() + "'," + i + ");\">"
+               + "<img class=\"delete\" src=\"/images/delete.gif\">"
+               + "</a></li>";
 
   if (items.length == 0)
     itemsHTML += "<li>No items</li>";
 
   list.html(itemsHTML);
 }
+
 
 // Remove an item from the TODOs
 function removeItem(key, index) {
@@ -42,6 +44,8 @@ function removeItem(key, index) {
     entity.update({"items": new_items});
 
   key = storage.put(entity);
+
+  updateList(entity);
 }
 
 
@@ -69,7 +73,7 @@ $(document).ready(function() {
 
     items = (entity.items) ? entity.items : [];
 
-    updateList(key);
+    updateList(entity);
   }  
 
   // Handler for adding new TODOs
@@ -95,7 +99,7 @@ $(document).ready(function() {
 
     input.val("");
 
-    updateList(key);
+    updateList(entity);
 
   });
 
@@ -104,7 +108,7 @@ $(document).ready(function() {
 
     entity = storage.sync(key);
 
-    updateList(key);
+    updateList(entity);
   });
 
 });

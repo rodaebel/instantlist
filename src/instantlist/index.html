@@ -4,8 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=460" />
     <title>Instant List</title>
+    {% if user %}
+      <script type="text/javascript" src="gaesynkit/gaesynkit.js"></script>
+    {% endif %}
     <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="gaesynkit/gaesynkit.js"></script>
     <script type="text/javascript" src="/js/instantlist.js"></script>
     <script type="text/javascript">
       var user = "{{ user }}";
@@ -14,7 +16,7 @@
   </head>
   <body>
     <h1>Instant List</h1>
-    <div>
+    <div class="links">
       {{ login_or_logout }}&nbsp;|
       <a id="sync" href="javascript:null;">Synchronize</a>
     </div>

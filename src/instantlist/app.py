@@ -42,7 +42,7 @@ class MainHandler(webapp.RequestHandler):
         login_or_logout = get_login_or_logout(users.get_current_user())
 
         # Get the current user
-        user = users.get_current_user() or u'anonymous'
+        user = users.get_current_user() or u''
 
         # Render the index.html template
         self.response.out.write(template.render('index.html', locals()))

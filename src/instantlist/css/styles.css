@@ -13,7 +13,6 @@ a {
 }
 
 a:hover {
-  border: none;
   color: #009;
   text-decoration: none;
 }
@@ -22,6 +21,11 @@ a:visited {
   border: none;
   color: #009;
   text-decoration: none;
+}
+
+a.disabled {
+  color: #666;
+  cursor: default;
 }
 
 h1 {
@@ -38,7 +42,12 @@ h1 {
   font-style: italic;
   margin: 0 0 20px 0;
   padding: 20px;
-  width: 155px;
+  text-align: center;
+  width: 170px;
+}
+
+.links {
+  margin-left: 30px;
 }
 
 .list {
@@ -48,7 +57,6 @@ h1 {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   color: #666;
-  font-size: 1.3em;
   font-style: italic;
   margin: 20px 0 0 0;
   width: 400px;
@@ -56,6 +64,7 @@ h1 {
 
 ol {
   border-bottom: 1px solid #e4e4e4;
+  font-size: 1.3em;
   margin-top: 8px;
   padding-bottom: 10px;
 }
@@ -77,7 +86,7 @@ input#addnew {
   -webkit-appearance: none;
   color: #666;
   font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
-  font-size: 1.0em;
+  font-size: 1.3em;
   margin: 0 0 15px 12px;
   outline: none;
   position: relative;
@@ -86,7 +95,8 @@ input#addnew {
 
 .footer {
   color: #666;
-  font-size: .8em;
+  font-size: .7em;
   margin-top: 20px;
-  width: 400px;
+  text-align: center;
+  width: 415px;
 }
