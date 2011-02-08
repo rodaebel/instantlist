@@ -40,7 +40,7 @@ function updateList(entity) {
           + "</a></li>";
 
   if (items.length == 0)
-    html += "<li>No items</li>";
+    html += "<li>Add an item below ...</li>";
 
   list.html(html);
 }
