@@ -1,32 +1,54 @@
+/*
+ * instantlist.js
+ *
+ * Copyright 2011 Tobias Rodaebel
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+var LIST_KIND = "List";
+
 // The storage
 var storage;
 
 // Draw updated list
 function updateList(entity) {
 
-  var list = $("#list");
-  var itemsHTML = "";
+  var list, tems, html;
+
+  list = $("#list");
 
   items = (entity.items) ? entity.items : [];
 
+  html = "";
+
   for (i in items)
-    itemsHTML += "<li id=\"" + i + "\">" + items[i]
-               + "<a href=\"javascript:removeItem('"
-               + entity.key().value() + "'," + i + ");\">"
-               + "<img class=\"delete\" src=\"/images/delete.gif\">"
-               + "</a></li>";
+    html += "<li id=\"" + i + "\">" + items[i]
+          + "<a href=\"javascript:removeItem('"
+          + entity.key().value() + "'," + i + ");\">"
+          + "<img class=\"delete\" src=\"/images/delete.gif\">"
+          + "</a></li>";
 
   if (items.length == 0)
-    itemsHTML += "<li>No items</li>";
+    html += "<li>No items</li>";
 
-  list.html(itemsHTML);
+  list.html(html);
 }
 
-
-// Remove an item from the TODOs
+// Remove an item from the list
 function removeItem(key, index) {
 
-  var entity, items, key;
+  var entity, items;
   var new_items = new Array;
 
   entity = storage.get(key);
@@ -50,10 +72,9 @@ function removeItem(key, index) {
 
 }
 
-
 $(document).ready(function() {
 
-  // The text field for adding new TODOs
+  // The text field for adding new list items
   var input = $("#addnew");
 
   if ("gaesynkit" in window) {
@@ -62,23 +83,21 @@ $(document).ready(function() {
 
     storage = new gaesynkit.db.Storage;
 
-    key = new gaesynkit.db.Key.from_path("ToDoList", user);
+    key = new gaesynkit.db.Key.from_path("List", user);
 
     try {
       entity = storage.get(key);
     }
     catch (e) {
-      entity = new gaesynkit.db.Entity("ToDoList", user);
+      entity = new gaesynkit.db.Entity("List", user);
       key = storage.put(entity);
       entity = storage.sync(key);
     }
 
-    items = (entity.items) ? entity.items : [];
-
     updateList(entity);
   }  
 
-  // Handler for adding new TODOs
+  // Handler for adding new list items
   input.change(function () {
 
     var value, items, key, entity;
@@ -88,11 +107,11 @@ $(document).ready(function() {
     if (value == "") return;
 
     // Update entity with the new list of items
-    key = new gaesynkit.db.Key.from_path("ToDoList", user);
+    key = new gaesynkit.db.Key.from_path("List", user);
 
     entity = storage.get(key);
 
-    if (!(items = entity.items)) items = [];
+    items = (entity.items) ? entity.items : [];
 
     items.push(value);
 
@@ -105,7 +124,7 @@ $(document).ready(function() {
 
   });
 
-  // Synchronize TODOs
+  // Synchronize list
   $("#sync").click(function() {
 
     entity = storage.sync(key);

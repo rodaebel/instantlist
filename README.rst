@@ -1,6 +1,6 @@
-=============================
-instantlist - Simple ToDo App
-=============================
+============
+Instant List
+============
 
 This Google App Engine application demonstrates the usage of gaesynkit and the
 Client Storage API.
