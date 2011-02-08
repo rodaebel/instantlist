@@ -22,7 +22,7 @@ Google App Engine is a trademark of Google Inc.
 Online Demo
 -----------
 
-In order to try an online demo, access the following URL with a HTML5 Web
+In order to try an online demo, access the following URL with an HTML5 Web
 Storage capable browser like Google Chrome or Safari:
 
   http://instantlist.appspot.com
