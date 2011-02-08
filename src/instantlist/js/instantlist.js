@@ -127,9 +127,13 @@ $(document).ready(function() {
   // Synchronize list
   $("#sync").click(function() {
 
+    $("#syncstatus").fadeIn(200);
+
     entity = storage.sync(key);
 
     updateList(entity);
+
+    $("#syncstatus").fadeOut(500);
   });
 
 });

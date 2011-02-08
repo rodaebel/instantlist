@@ -8,6 +8,30 @@ body {
   padding: 0 1em 0 1em;
 }
 
+div#syncstatus {
+  display: none;
+  background-color: #678;
+  border: none;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  color: #eee;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  width: 10em;
+  height: 7.6em;
+  text-align: center;
+  padding-top: 2.5em;
+  margin: 3em auto auto 11em;
+  position: absolute;
+  z-index: 10;
+}
+
+div#syncstatus img {
+  height: 120px;
+  width: 120px;
+}
+
 div#body {
   color: #333;
   margin: 0 auto 0 auto;
@@ -16,18 +40,18 @@ div#body {
 
 a {
   border: none;
-  color: #449;
+  color: #567;
   text-decoration: none;
 }
 
 a:hover {
-  color: #449;
+  color: #567;
   text-decoration: none;
 }
 
 a:visited {
   border: none;
-  color: #449;
+  color: #567;
   text-decoration: none;
 }
 
@@ -98,7 +122,7 @@ input#addnew {
 
 .footer {
   font-size: .7em;
-  margin-top: 0.5em;
+  margin: 0.5em 0 1em 0;
   text-align: center;
   width: 44em;
 }
