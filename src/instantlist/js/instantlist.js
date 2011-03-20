@@ -21,10 +21,15 @@ var LIST_KIND = "List";
 // The storage
 var storage;
 
+// Helper function to escape HTML
+function escapeHTML(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 // Draw updated list
 function updateList(entity) {
 
-  var list, tems, html;
+  var list, items, html, i;
 
   list = $("#list");
 
@@ -33,7 +38,7 @@ function updateList(entity) {
   html = "";
 
   for (i in items)
-    html += "<li id=\"" + i + "\">" + items[i]
+    html += "<li id=\"" + i + "\">" + escapeHTML(items[i])
           + "<a href=\"javascript:removeItem('"
           + entity.key().value() + "'," + i + ");\">"
           + "<img class=\"delete\" src=\"/images/delete.gif\">"
