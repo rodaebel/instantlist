@@ -18,6 +18,8 @@ setup(
     long_description=(
         read('README.rst')
         + '\n\n' +
+        read('TODO.rst')
+        + '\n\n' +
         read('CHANGES.rst')
         ),
     license="Apache License 2.0",
