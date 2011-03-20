@@ -4,6 +4,7 @@ body {
   background-repeat: repeat-x;
   font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
   font-size: 150%;
+  text-shadow: #dde4e8 1px 1px;
   margin: 0;
   padding: 0 1em 0 1em;
 }
@@ -73,8 +74,11 @@ h1 {
 }
 
 .links {
+  color: #567;
+  font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
   font-size: 1em;
   text-align: center;
+  text-shadow: #fff 0px 1px;
   width: 14em;
 }
 
@@ -121,8 +125,11 @@ input#addnew {
 }
 
 .footer {
+  color: #678;
+  font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
   font-size: .7em;
   margin: 0.5em 0 1em 0;
   text-align: center;
+  text-shadow: #fff 0px 1px;
   width: 44em;
 }
