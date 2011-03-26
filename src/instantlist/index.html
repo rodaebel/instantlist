@@ -11,10 +11,14 @@
     <script type="text/javascript" src="/js/instantlist.js"></script>
     <script type="text/javascript">
       var user = "{{ user }}";
+
+      function set_focus() {
+        $("#addnew").focus();
+      }
     </script>
     <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all" />
   </head>
-  <body>
+  <body onLoad="set_focus();">
     <div id="body">
       <h1>Instant List</h1>
       <div class="links">
