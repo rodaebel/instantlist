@@ -11,10 +11,6 @@
     <script type="text/javascript" src="/js/instantlist.js"></script>
     <script type="text/javascript">
       var user = "{{ user }}";
-
-      function set_focus() {
-        $("#addnew").focus();
-      }
     </script>
     <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all" />
   </head>
@@ -32,7 +28,7 @@
           <li>Edit your Instant List</li>
           <li>Synchronize it</li>
         </ol>
-        <input id="addnew" type="text" />
+        <input id="addnew" type="text" title="Enter new list item" />
       </div>
       <div class="footer">
         &copy; 2011 by Tobias Rodäbel

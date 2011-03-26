@@ -82,6 +82,9 @@ $(document).ready(function() {
   // The text field for adding new list items
   var input = $("#addnew");
 
+  // Automatically set focus to input box
+  input.focus();
+
   if ("gaesynkit" in window) {
 
     var key, entity, items;
