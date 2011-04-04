@@ -19,7 +19,7 @@
 var LIST_KIND = "List";
 
 // The storage
-var storage;
+var Storage;
 
 // Helper function to escape HTML
 function escapeHTML(s) {
@@ -56,7 +56,7 @@ function removeItem(key, index) {
   var entity, items;
   var new_items = new Array;
 
-  entity = storage.get(key);
+  entity = Storage.get(key);
 
   $("#"+index).fadeOut(500, function() {
 
@@ -70,7 +70,7 @@ function removeItem(key, index) {
     else
       entity.update({"items": new_items});
 
-    key = storage.put(entity);
+    key = Storage.put(entity);
 
     updateList(entity);
   });
@@ -85,25 +85,26 @@ $(document).ready(function() {
   // Automatically set focus to input box
   input.focus();
 
-  if ("gaesynkit" in window) {
+  // Return here if the gaesynkit library is missing
+  if (!("gaesynkit" in window)) return;
 
-    var key, entity, items;
+  // Otherwise, initilaze the storage
+  var key, entity, items;
 
-    storage = new gaesynkit.db.Storage;
+  Storage = new gaesynkit.db.Storage;
 
-    key = new gaesynkit.db.Key.from_path("List", user);
+  key = new gaesynkit.db.Key.from_path("List", user);
 
-    try {
-      entity = storage.get(key);
-    }
-    catch (e) {
-      entity = new gaesynkit.db.Entity("List", user);
-      key = storage.put(entity);
-      entity = storage.sync(key);
-    }
+  try {
+    entity = Storage.get(key);
+  }
+  catch (e) {
+    entity = new gaesynkit.db.Entity("List", user);
+    key = Storage.put(entity);
+    entity = Storage.sync(key);
+  }
 
-    updateList(entity);
-  }  
+  updateList(entity);
 
   // Handler for adding new list items
   input.change(function () {
@@ -117,14 +118,14 @@ $(document).ready(function() {
     // Update entity with the new list of items
     key = new gaesynkit.db.Key.from_path("List", user);
 
-    entity = storage.get(key);
+    entity = Storage.get(key);
 
     items = (entity.items) ? entity.items : [];
 
     items.push(value);
 
     entity.update({"items": items});
-    key = storage.put(entity);
+    key = Storage.put(entity);
 
     input.val("");
 
@@ -138,14 +139,12 @@ $(document).ready(function() {
     if (user == "") return;
 
     $("#syncstatus").fadeIn(500, function() {
-
-      entity = storage.sync(key);
-    });
-
-    $("#syncstatus").fadeOut(500, function() {
-
+      entity = Storage.sync(key);
       updateList(entity);
     });
+
+    $("#syncstatus").fadeOut(500, function() {});
+
   });
 
 });
