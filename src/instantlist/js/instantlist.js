@@ -41,7 +41,7 @@ function updateList(entity) {
     html += "<li id=\"" + i + "\">" + escapeHTML(items[i])
           + "<a href=\"javascript:removeItem('"
           + entity.key().value() + "'," + i + ");\">"
-          + "<img class=\"delete\" src=\"/images/delete.gif\">"
+          + "<img class=\"delete\" src=\"/images/delete.png\">"
           + "</a></li>";
 
   if (items.length == 0)

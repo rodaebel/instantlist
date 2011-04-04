@@ -4,7 +4,6 @@ body {
   background-repeat: repeat-x;
   font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
   font-size: 150%;
-  text-shadow: #dde4e8 1px 1px;
   margin: 0;
   padding: 0 1em 0 1em;
 }
@@ -66,7 +65,6 @@ h1 {
   -webkit-border-bottom-right-radius: 0.5em;
   -webkit-border-bottom-left-radius: 0.5em;
   font-weight: normal;
-  font-style: italic;
   margin: 0 0 0.5em 0;
   padding: 0.5em;
   text-align: center;
@@ -88,7 +86,6 @@ h1 {
   border-radius: 1em;
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
-  font-style: italic;
   margin: 1em 0 0 0;
   width: 30em;
 }
@@ -106,9 +103,10 @@ li {
 
 img.delete {
   border: none;
+  float: right;
+  height: 30px;
   margin-left: 20px;
-  height: 10px;
-  width: 10px;
+  position: relative;
 }
 
 input#addnew {
