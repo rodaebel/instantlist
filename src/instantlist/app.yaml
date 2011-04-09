@@ -26,6 +26,11 @@ handlers:
   static_files: favicon.ico
   upload: favicon.ico
 
+- url: /cache.manifest
+  static_files: cache.manifest
+  upload: cache.manifest
+  mime_type: text/cache-manifest
+
 - url: /gaesynkit/.*
   script: gaesynkit/handlers.py
   login: required
