@@ -107,6 +107,7 @@ img.delete {
   height: 30px;
   margin-left: 20px;
   position: relative;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 input#addnew {
