@@ -50,7 +50,7 @@ Get the sources::
 Build and run the application::
 
   $ cd instantlist
-  $ ../bin/python bootstrap.py --distribute
+  $ python bootstrap.py --distribute
   $ ./bin/buildout
   $ ./bin/dev_appserver parts/instantlist
 
