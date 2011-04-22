@@ -38,6 +38,7 @@ standard installation of the Linux operating environment. You should ensure
 that these directories are on your PATH and following programs can be found:
 
 * Python 2.5.2+ (3.x is not supported!)
+* gaesynkit (will be automatically installed when using zc.buildout)
 
 
 Building and Running the Application
